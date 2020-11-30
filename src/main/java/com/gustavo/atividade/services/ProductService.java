@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gustavo.atividade.entities.Product;
+import com.gustavo.atividade.entities.User;
 import com.gustavo.atividade.repositories.ProductRepository;
 
 @Service
@@ -26,5 +27,9 @@ public class ProductService {
 	
 	public void delete(Long id) {
 		repository.deleteById(id);
+	}
+	
+	public Product insert(Product obj) {
+		return repository.save(obj);
 	}
 }
