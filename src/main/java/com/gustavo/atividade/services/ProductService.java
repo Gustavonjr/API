@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gustavo.atividade.entities.Product;
-import com.gustavo.atividade.entities.User;
+import com.gustavo.atividade.entities.Product;
+import com.gustavo.atividade.entities.Product;
 import com.gustavo.atividade.repositories.ProductRepository;
 
 @Service
@@ -31,5 +32,19 @@ public class ProductService {
 	
 	public Product insert(Product obj) {
 		return repository.save(obj);
+	}
+	
+	public Product update(Long id, Product obj) {
+		Product entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+		
+	}
+	
+	private void updateData(Product entity, Product obj) {
+		entity.setName(obj.getName());
+		entity.setDescription(obj.getDescription());
+		entity.setPrice(obj.getPrice());
+		
 	}
 }

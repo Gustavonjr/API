@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gustavo.atividade.entities.Order;
+import com.gustavo.atividade.entities.User;
+import com.gustavo.atividade.entities.Order;
 import com.gustavo.atividade.repositories.OrderRepository;
 
 @Service
@@ -23,4 +25,9 @@ public class OrderService {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Order insert(Order obj) {
+		return repository.save(obj);
+	}
+	
 }
