@@ -9,6 +9,8 @@ public class AtividadeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AtividadeApplication.class, args);
+		
+		/* Test GIT */
 	}
 
 }
